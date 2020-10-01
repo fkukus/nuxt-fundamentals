@@ -5,7 +5,24 @@
         {{ post.title }}
       </h1>
       <p>{{ post.content }}</p>
+      <ul v-if="post.id === 'summary'">
+        <li v-for="aPost in posts" :key="aPost.id">
+          <nuxt-link :to="{name: 'posts-id', params: {id: aPost.id}}">
+            {{ aPost.title }}
+          </nuxt-link>
+        </li>
+      </ul>
     </article>
+    <aside v-if="post.id !== 'summary'">
+      <h3>You may like {{ relatedPosts.length }} article<span v-if="relatedPosts.length > 1">s</span></h3>
+      <ul>
+        <li v-for="related in relatedPosts" :key="related.id">
+          <nuxt-link :to="{name: 'posts-id', params: {id: related.id}}">
+            {{ related.title }}
+          </nuxt-link>
+        </li>
+      </ul>
+    </aside>
   </div>
 </template>
 
@@ -35,7 +52,20 @@ export default {
   },
   computed: {
     post () {
-      return this.posts.find(post => post.id === this.id)
+      let post = this.posts.find(post => post.id === this.id)
+
+      if (post === undefined) {
+        post = {
+          id: 'summary',
+          title: 'Complete list of posts',
+          content: ''
+        }
+      }
+
+      return post
+    },
+    relatedPosts () {
+      return this.posts.filter(post => post.id !== this.id)
     }
   }
 }
