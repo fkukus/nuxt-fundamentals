@@ -6,11 +6,6 @@
       </nuxt-link>
       <span class="subheader">A Vue School course</span>
     </div>
-    <div class="logo">
-      <nuxt-link :to="{name: 'posts-id'}" class="logo text-lg">
-        Posts
-      </nuxt-link>
-    </div>
   </nav>
 </template>
 
