@@ -15,7 +15,6 @@
           {{ post.title }}
         </nuxt-link>
       </div>
-      <p>Test automatic deploy from Heroku</p>
     </div>
   </div>
 </template>

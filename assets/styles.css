@@ -26,6 +26,9 @@ body {
   background: var(--navy);
   color: white;
 }
+p {
+  margin: 10px;
+}
 a {
   color: var(--teal-light);
   text-decoration: none;
@@ -80,4 +83,12 @@ margin-left: 15px;
 .button--grey:hover {
 color: #fff;
 background-color: #35495e;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  margin: 0 auto;
+  font-style: italic;
+  opacity: 0.70;
 }
