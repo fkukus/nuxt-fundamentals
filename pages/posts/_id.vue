@@ -33,6 +33,18 @@ export default {
     relatedPosts () {
       return this.$store.state.posts.all.filter(post => post.id !== this.id)
     }
+  },
+  head () {
+    return {
+      title: this.post.title,
+      meta: [
+        { name: 'description', content: this.post.content },
+        { name: 'twitter:title', content: this.post.title },
+        { name: 'twitter:description', content: this.post.content },
+        { name: 'twitter:image', content: 'https://picsum.photos/300/200' },
+        { name: 'twitter:card', content: 'summary_large_image' }
+      ]
+    }
   }
 }
 </script>

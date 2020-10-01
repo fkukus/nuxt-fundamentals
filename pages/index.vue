@@ -9,7 +9,7 @@
         <nuxt-link
           v-for="post in posts"
           :key="post.id"
-          class="button--green"
+          class="button--grey"
           :to="{name: 'posts-id', params:{id: post.id}}"
         >
           {{ post.title }}
@@ -30,6 +30,16 @@ export default {
     posts () {
       return this.$store.state.posts.all
     }
+  },
+  head: {
+    title: 'Home page',
+    meta: [
+      { name: 'description', content: 'Nuxt + Vue School tutorial' },
+      { name: 'twitter:title', content: 'Nuxt Fundamentals by Vue School' },
+      { name: 'twitter:description', content: 'Nuxt + Vue School tutorial' },
+      { name: 'twitter:image', content: 'https://picsum.photos/300/200' },
+      { name: 'twitter:card', content: 'summary_large_image' }
+    ]
   }
 }
 </script>
