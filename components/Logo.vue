@@ -17,13 +17,13 @@
 
 <style>
 .NuxtLogo {
-  animation: 1s appear;
+  animation: 4s appear;
   margin: auto;
 }
 
 @keyframes appear {
   0% {
-    opacity: 0;
+    opacity: 0.1;
   }
 }
 </style>
